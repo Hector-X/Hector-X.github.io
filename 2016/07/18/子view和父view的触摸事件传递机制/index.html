@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="关于iOS中子View和父View之间的touch时间传递关系整理。 消息传递如果在父View中添加子View，然后在父View的m文件中描述touchBegin函数的时候，会发生触摸子View的区域TouchBegin事件没有响应。 这是因为子View把触摸事件截获了，但是在没有做任何响应链处理的情况下，子View是不会把触摸事件传回父View的。这个时候我们需要为子View写一个Categor">
+    <meta name="description" content="关于iOS中子View和父View之间的touch时间传递关系整理。">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="子View和父View的触摸事件传递机制">
 <meta property="og:url" content="http://yoursite.com/2016/07/18/子view和父view的触摸事件传递机制/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于iOS中子View和父View之间的touch时间传递关系整理。 消息传递如果在父View中添加子View，然后在父View的m文件中描述touchBegin函数的时候，会发生触摸子View的区域TouchBegin事件没有响应。 这是因为子View把触摸事件截获了，但是在没有做任何响应链处理的情况下，子View是不会把触摸事件传回父View的。这个时候我们需要为子View写一个Categor">
+<meta property="og:description" content="关于iOS中子View和父View之间的touch时间传递关系整理。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T09:48:22.835Z">
+<meta property="og:updated_time" content="2019-03-04T15:11:10.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="子View和父View的触摸事件传递机制">
-<meta name="twitter:description" content="关于iOS中子View和父View之间的touch时间传递关系整理。 消息传递如果在父View中添加子View，然后在父View的m文件中描述touchBegin函数的时候，会发生触摸子View的区域TouchBegin事件没有响应。 这是因为子View把触摸事件截获了，但是在没有做任何响应链处理的情况下，子View是不会把触摸事件传回父View的。这个时候我们需要为子View写一个Categor">
+<meta name="twitter:description" content="关于iOS中子View和父View之间的touch时间传递关系整理。">
 
 
 
@@ -136,7 +136,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 306 个字)
+                    2 分钟 读完 (大约 307 个字)
                 </span>
                 
                 
@@ -149,7 +149,7 @@
             
         </h1>
         <div class="content">
-            <p>关于iOS中子View和父View之间的touch时间传递关系整理。</p>
+            <p>关于iOS中子View和父View之间的touch时间传递关系整理。<br><a id="more"></a></p>
 <h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><p>如果在父View中添加子View，然后在父View的m文件中描述touchBegin函数的时候，会发生触摸子View的区域TouchBegin事件没有响应。</p>
 <p>这是因为子View把触摸事件截获了，但是在没有做任何响应链处理的情况下，子View是不会把触摸事件传回父View的。这个时候我们需要为子View写一个Category来完成事件链的传递。</p>
 <p>下以子UIView为例。</p>

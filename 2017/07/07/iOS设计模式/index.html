@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="本文对iOS中经常使用的设计模式做一个整理。 适配器（Adapter）模式适配器可以让一些接口不兼容的类一起工作。它包装一个对象然后暴漏一个标准的交互接口。 如果你熟悉适配器设计模式，苹果通过一个稍微不同的方式来实现它，苹果使用了协议(Protocol)的方式来实现。你可能已经熟悉UITableViewDelegate, UIScrollViewDelegate, NSCoding 和 NSCop">
+    <meta name="description" content="本文对iOS中经常使用的设计模式做一个整理。">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS设计模式">
 <meta property="og:url" content="http://yoursite.com/2017/07/07/iOS设计模式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文对iOS中经常使用的设计模式做一个整理。 适配器（Adapter）模式适配器可以让一些接口不兼容的类一起工作。它包装一个对象然后暴漏一个标准的交互接口。 如果你熟悉适配器设计模式，苹果通过一个稍微不同的方式来实现它，苹果使用了协议(Protocol)的方式来实现。你可能已经熟悉UITableViewDelegate, UIScrollViewDelegate, NSCoding 和 NSCop">
+<meta property="og:description" content="本文对iOS中经常使用的设计模式做一个整理。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T09:48:04.780Z">
+<meta property="og:updated_time" content="2019-03-04T15:11:23.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS设计模式">
-<meta name="twitter:description" content="本文对iOS中经常使用的设计模式做一个整理。 适配器（Adapter）模式适配器可以让一些接口不兼容的类一起工作。它包装一个对象然后暴漏一个标准的交互接口。 如果你熟悉适配器设计模式，苹果通过一个稍微不同的方式来实现它，苹果使用了协议(Protocol)的方式来实现。你可能已经熟悉UITableViewDelegate, UIScrollViewDelegate, NSCoding 和 NSCop">
+<meta name="twitter:description" content="本文对iOS中经常使用的设计模式做一个整理。">
 
 
 
@@ -136,7 +136,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 分钟 读完 (大约 1038 个字)
+                    7 分钟 读完 (大约 1039 个字)
                 </span>
                 
                 
@@ -149,7 +149,7 @@
             
         </h1>
         <div class="content">
-            <p>本文对iOS中经常使用的设计模式做一个整理。</p>
+            <p>本文对iOS中经常使用的设计模式做一个整理。<br><a id="more"></a></p>
 <h3 id="适配器（Adapter）模式"><a href="#适配器（Adapter）模式" class="headerlink" title="适配器（Adapter）模式"></a>适配器（Adapter）模式</h3><p>适配器可以让一些<strong>接口不兼容</strong>的类一起工作。它包装一个对象然后暴漏一个标准的交互接口。</p>
 <p>如果你熟悉适配器设计模式，苹果通过一个稍微不同的方式来实现它，苹果使用了协议(Protocol)的方式来实现。你可能已经熟悉UITableViewDelegate, UIScrollViewDelegate, NSCoding 和 NSCopying协议。举个例子，使用NSCopying协议，任何类都可以提供一个标准的copy方法。</p>
 <p>delegate要声明成weak，这是因为在做调用处理的时候为了防止<strong>循环引用</strong>的发生！<br>id意味着delegate属性可以用任何遵从HorizontalScrollerDelegate的类赋值，这样可以保障一定的类型安全。</p>

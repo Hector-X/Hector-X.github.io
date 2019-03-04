@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="在iOS中防止SQL注入的方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T10:20:52.963Z">
+<meta property="og:updated_time" content="2019-03-04T15:11:40.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中防止SQL注入">
 <meta name="twitter:description" content="在iOS中防止SQL注入的方法">
@@ -149,7 +149,8 @@
             
         </h1>
         <div class="content">
-            <p>在iOS中防止SQL注入的方法<br><a id="more"></a><br>因为runtime的特性，iOS存在SQL的注入，这是由于SQL的特性所示。</p>
+            <p>在iOS中防止SQL注入的方法<br><a id="more"></a></p>
+<p>因为runtime的特性，iOS存在SQL的注入，这是由于SQL的特性所示。</p>
 <p>SQL规定:如果在语句中存在单引号’ 那么会将SQL语句阶段，分解成两段SQL语句进行执行。</p>
 <p>反注入的通常做法是，</p>
 <p>利用SQLite的绑定参数。通过绑定参数避免字符串拼接。<br><figure class="highlight objc hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="hljs-built_in">BOOL</span>)insertMessage:(<span class="hljs-built_in">NSString</span>*)message</span><br><span class="line">&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> [db executeUpdate:<span class="hljs-string">@"INSERT INTO message VALUES(?)"</span>, message];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>

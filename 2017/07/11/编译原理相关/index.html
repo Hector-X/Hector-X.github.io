@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本文对编译原理中的基础知识做简单介绍。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T10:21:53.633Z">
+<meta property="og:updated_time" content="2019-03-04T15:11:17.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理相关">
 <meta name="twitter:description" content="本文对编译原理中的基础知识做简单介绍。">
@@ -149,7 +149,8 @@
             
         </h1>
         <div class="content">
-            <p>本文对编译原理中的基础知识做简单介绍。<br><a id="more"></a><br>编译环节中的链接环节。其实就是把各个函数存放的代码文件编译成的o文件链接起来，用汇编指令的jump来进行跳转。<br>我们知道函数调用对应到汇编其实是 jump 指令，后面写上被调用函数的地址，但在生成 main.o 的过程中，strlen() 函数的地址并不知道，所以只能先用 0 来代替，直到最后链接时，才会修改成真实的地址。</p>
+            <p>本文对编译原理中的基础知识做简单介绍。<br><a id="more"></a></p>
+<p>编译环节中的链接环节。其实就是把各个函数存放的代码文件编译成的o文件链接起来，用汇编指令的jump来进行跳转。<br>我们知道函数调用对应到汇编其实是 jump 指令，后面写上被调用函数的地址，但在生成 main.o 的过程中，strlen() 函数的地址并不知道，所以只能先用 0 来代替，直到最后链接时，才会修改成真实的地址。</p>
 <hr>
 <p>链接器就是靠着重定位表来知道哪些地方需要被重定位的。每个可能存在重定位的段都会有对应的重定位表。在链接阶段，链接器会根据重定位表中，需要重定位的内容，去别的目标文件中找到地址并进行重定位。   —————&gt;这就是静态编译</p>
 <p>动态链接这个名词，它表示<strong>重定位发生在运行时</strong>而非编译后 -&gt; 这个就是动态编译</p>

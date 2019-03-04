@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="这种机制下系统默认有一个可变数组NSMutableArray  *  visiableCells,用来保存当前显示的cell.一个可变字典NSMutableDictnery* reusableTableCells,用来保存可重复利用的cell.(之所以用字典是因为可重用的cell有不止一种样式,我们需要根据它的reuseIdentifier,也就是所谓的重用标示符来查找是否有可重用的该样式的cel">
+    <meta name="description" content="深入理解cell的重用模式">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS的cell重用模式">
 <meta property="og:url" content="http://yoursite.com/2017/07/08/iOS的cell重用模式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这种机制下系统默认有一个可变数组NSMutableArray  *  visiableCells,用来保存当前显示的cell.一个可变字典NSMutableDictnery* reusableTableCells,用来保存可重复利用的cell.(之所以用字典是因为可重用的cell有不止一种样式,我们需要根据它的reuseIdentifier,也就是所谓的重用标示符来查找是否有可重用的该样式的cel">
+<meta property="og:description" content="深入理解cell的重用模式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T09:47:45.469Z">
+<meta property="og:updated_time" content="2019-03-04T15:11:30.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的cell重用模式">
-<meta name="twitter:description" content="这种机制下系统默认有一个可变数组NSMutableArray  *  visiableCells,用来保存当前显示的cell.一个可变字典NSMutableDictnery* reusableTableCells,用来保存可重复利用的cell.(之所以用字典是因为可重用的cell有不止一种样式,我们需要根据它的reuseIdentifier,也就是所谓的重用标示符来查找是否有可重用的该样式的cel">
+<meta name="twitter:description" content="深入理解cell的重用模式">
 
 
 
@@ -136,7 +136,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 566 个字)
+                    4 分钟 读完 (大约 577 个字)
                 </span>
                 
                 
@@ -149,7 +149,8 @@
             
         </h1>
         <div class="content">
-            <p>这种机制下系统默认有一个可变数组<strong>NSMutableArray  *  visiableCells</strong>,用来保存当前显示的cell.<br>一个可变字典<strong>NSMutableDictnery* reusableTableCells</strong>,用来保存可重复利用的cell.(之所以用字典是因为可重用的cell有不止一种样式,我们需要根据它的reuseIdentifier,也就是所谓的重用标示符来查找是否有可重用的该样式的cell).</p>
+            <p>深入理解cell的重用模式<br><a id="more"></a></p>
+<p>这种机制下系统默认有一个可变数组<strong>NSMutableArray  *  visiableCells</strong>,用来保存当前显示的cell.<br>一个可变字典<strong>NSMutableDictnery* reusableTableCells</strong>,用来保存可重复利用的cell.(之所以用字典是因为可重用的cell有不止一种样式,我们需要根据它的reuseIdentifier,也就是所谓的重用标示符来查找是否有可重用的该样式的cell).</p>
 <p>系统第一次执行- (UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath这个方法的时候, reusableTableCells为空,[tableView dequeueReusableCellWithIdentifier:identifier]的返回值为nil,我们需要通过[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier: identifier]方式来创建.</p>
 <p>但是当整个屏幕的cell显示不完全的时候cellForRowAtIndexPath这个方法的执行情况是：</p>
 <ol>
